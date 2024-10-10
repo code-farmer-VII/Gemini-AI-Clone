@@ -70,8 +70,8 @@ const Main = () => {
             </div>
           )}
 
-          <div className="main-bottom">
-            <div className="search-box">
+          <div className="main-bottom ">
+            <div className="search-box flex justify-between">
               <input
                 onChange={(event) => setInput(event.target.value)}
                 value={input}

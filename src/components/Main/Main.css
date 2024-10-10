@@ -22,6 +22,7 @@
 }
 .main .greet{
     margin: 50px 0;
+    margin-bottom: 50px;
     font-size: 56px;
     color: #C4C7C5;
     font-weight: 500;
@@ -63,6 +64,7 @@
     background-color: #DFE4EA;
 }
 .main-bottom{
+    margin-top: 50px;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -157,6 +159,12 @@
     line-height: 1.8;
 }
 @media (max-wdith: 600px) {
+    .greet{
+        margin-bottom: 100px;
+    }
+    .main-bottom{
+        margin-top: 50px;
+    }
     .main-bottom input{
         flex: none ;
         width: 150px;

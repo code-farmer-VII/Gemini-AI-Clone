@@ -16,7 +16,7 @@ const Main = () => {
 
   return (
     <>
-      <div className="flex-1 h-full  relative">
+      <div className="flex-1 h-screen  relative">
         <div className="flex items-center justify-between p-5 text-2xl text-gray-500">
           <p>Gemini</p>
           <img
@@ -38,7 +38,7 @@ const Main = () => {
                 <p>How can I help you today?</p>
               </div>
 
-              <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-4 p-5 overflow-y-auto">
+              <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-4 p-5 overflow-y-auto pb-40">
                 <div className="h-48 p-4 bg-gray-100 rounded-lg relative cursor-pointer hover:bg-gray-200">
                   <p className="text-gray-500 text-lg">
                     Suggest beautiful places to see on upcoming road trip
@@ -82,7 +82,7 @@ const Main = () => {
               </div>
             </>
           ) : (
-            <div className="max-h-[70vh] overflow-y-scroll px-[5%] scrollbar-hide">
+            <div className="max-h-[70vh] overflow-y-scroll px-[5%] scrollbar-hide pb-40">
               <div className="flex items-center gap-5 my-10">
                 <img src={assets.user_icon} alt="UserIcon" className="w-10 rounded-full" />
                 <p>{recentPrompt}</p>
@@ -102,14 +102,14 @@ const Main = () => {
             </div>
           )}
 
-          <div className="fixd bottom-0 w-full max-w-[900px]  mx-auto">
+          <div className="absolute bottom-0 w-full max-w-[900px]  mx-auto">
             <div className="flex items-center justify-between gap- bg-gray-100 p-4 rounded-full">
               <input
                 onChange={(event) => setInput(event.target.value)}
                 value={input}
                 type="text"
                 placeholder="Enter a prompt here"
-                className="flex-1 bg-transparent border-none outline-none text-lg"
+                className="flex-1 bg-transparent border-none outline-none text-lg text-black"
               />
               <div className="flex items-center gap-4">
                 {input ? (

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"; // Import motion from framer-motion
 import video1 from "../assets/video1.mp4";
 import video2 from "../assets/video2.mp4";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -44,12 +45,12 @@ const HeroSection = () => {
  to fully visible
         transition={{ delay: 1, duration: 0.4 }} // Slight delay and duration
       >
-        <a
-          href="/gemini"
+        <Link
+          to="/Gemini"
           className="bg-gradient-to-r from-sky-500 to-sky-800 py-3 px-4 mx-3 rounded-md"
         >
           Start for free
-        </a>
+        </Link>
       </motion.div>
 
       {/* Video Section Animation */}

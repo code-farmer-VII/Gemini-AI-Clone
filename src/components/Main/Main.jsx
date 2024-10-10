@@ -77,6 +77,7 @@ const Main = () => {
                 value={input}
                 type="text"
                 placeholder="Enter a prompt here"
+                className="text-black"
               />
               <div className="search-box-icon">
                 <img src={assets.gallery_icon} alt="GalleryIcon" />

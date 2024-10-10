@@ -1,16 +1,17 @@
-import Navbar from "../components/Navbar";
-import HeroSection from "../components/HeroSection";
-import FeatureSection from "../components/FeatureSection";
-import Workflow from "../components/Workflow";
-import Footer from "../components/Footer";
-import Pricing from "../components/Pricing";
-import Testimonials from "../components/Testimonials";
+import Navbar from "../components/Navbar" 
+import HeroSection from "../components/HeroSection"
+import FeatureSection from "../components/FeatureSection" 
+import Workflow from "../components/Workflow"
+import Footer from "../components/Footer"
+import Pricing from "../components/Pricing"
+import Testimonials from "../components/Testimonials"
+import "./Home.css";
 
-const Home = () => {
+const App = () => {
   return (
-    <>
+    <div  className="main">
       <Navbar />
-      <div className="max-w-7xl mx-auto pt-20 px-6">
+      <div className=" mx-auto pt-20 px-6">
         <HeroSection />
         <FeatureSection />
         <Workflow />
@@ -18,8 +19,8 @@ const Home = () => {
         <Testimonials />
         <Footer />
       </div>
-    </>
+    </div>
   );
 };
 
-export default Home;
+export default App;

@@ -45,7 +45,7 @@ const HeroSection = () => {
         transition={{ delay: 1, duration: 0.4 }} // Slight delay and duration
       >
         <a
-          href="#"
+          href="/Gemini"
           className="bg-gradient-to-r from-sky-500 to-sky-800 py-3 px-4 mx-3 rounded-md"
         >
           Start for free

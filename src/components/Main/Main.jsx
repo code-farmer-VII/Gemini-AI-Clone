@@ -1,4 +1,3 @@
-import "./Main.css";
 import { assets } from "../../assets/assets";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
@@ -14,87 +13,118 @@ const Main = () => {
     loading,
     resultData,
   } = useContext(Context);
+
   return (
     <>
-      <div className="main">
-        <div className="nav">
+      <div className="flex-1 h-full  relative">
+        <div className="flex items-center justify-between p-5 text-2xl text-gray-500">
           <p>Gemini</p>
-          <img src={assets.user_icon} alt="UserIcon" />
+          <img
+            src={assets.user_icon}
+            alt="UserIcon"
+            className="w-10 rounded-full"
+          />
         </div>
-        <div className="main-container">
+
+        <div className="max-w-[900px] mx-auto">
           {!showResult ? (
             <>
-              <div className="greet">
+              <div className="my-12 mb-12 text-5xl text-gray-400 font-medium p-5">
                 <p>
-                  <span>Hello, Dev</span>
+                  <span className="bg-gradient-to-r from-blue-500 to-red-500 bg-clip-text text-transparent">
+                    Hello, Dev
+                  </span>
                 </p>
                 <p>How can I help you today?</p>
               </div>
-              <div className="cards">
-                <div className="card">
-                  <p>Suggest beautiful places to see on upcoming road trip</p>
-                  <img src={assets.compass_icon} alt="CompassIcon" />
+
+              <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-4 p-5 overflow-y-auto">
+                <div className="h-48 p-4 bg-gray-100 rounded-lg relative cursor-pointer hover:bg-gray-200">
+                  <p className="text-gray-500 text-lg">
+                    Suggest beautiful places to see on upcoming road trip
+                  </p>
+                  <img
+                    src={assets.compass_icon}
+                    alt="CompassIcon"
+                    className="w-9 p-1 bg-white rounded-full absolute bottom-2 right-2"
+                  />
                 </div>
-                <div className="card">
-                  <p>Suggest beautiful places to see on upcoming road trip</p>
-                  <img src={assets.bulb_icon} alt="CompassIcon" />
+                <div className="h-48 p-4 bg-gray-100 rounded-lg relative cursor-pointer hover:bg-gray-200">
+                  <p className="text-gray-500 text-lg">
+                    Suggest beautiful places to see on upcoming road trip
+                  </p>
+                  <img
+                    src={assets.bulb_icon}
+                    alt="BulbIcon"
+                    className="w-9 p-1 bg-white rounded-full absolute bottom-2 right-2"
+                  />
                 </div>
-                <div className="card">
-                  <p>Suggest beautiful places to see on upcoming road trip</p>
-                  <img src={assets.message_icon} alt="CompassIcon" />
+                <div className="h-48 p-4 bg-gray-100 rounded-lg relative cursor-pointer hover:bg-gray-200">
+                  <p className="text-gray-500 text-lg">
+                    Suggest beautiful places to see on upcoming road trip
+                  </p>
+                  <img
+                    src={assets.message_icon}
+                    alt="MessageIcon"
+                    className="w-9 p-1 bg-white rounded-full absolute bottom-2 right-2"
+                  />
                 </div>
-                <div className="card">
-                  <p>Suggest beautiful places to see on upcoming road trip</p>
-                  <img src={assets.code_icon} alt="CompassIcon" />
+                <div className="h-48 p-4 bg-gray-100 rounded-lg relative cursor-pointer hover:bg-gray-200">
+                  <p className="text-gray-500 text-lg">
+                    Suggest beautiful places to see on upcoming road trip
+                  </p>
+                  <img
+                    src={assets.code_icon}
+                    alt="CodeIcon"
+                    className="w-9 p-1 bg-white rounded-full absolute bottom-2 right-2"
+                  />
                 </div>
               </div>
             </>
           ) : (
-            <div className="result">
-              <div className="result-title">
-                <img src={assets.user_icon} alt="UserIcon" />
+            <div className="max-h-[70vh] overflow-y-scroll px-[5%] scrollbar-hide">
+              <div className="flex items-center gap-5 my-10">
+                <img src={assets.user_icon} alt="UserIcon" className="w-10 rounded-full" />
                 <p>{recentPrompt}</p>
               </div>
-              <div className="result-data">
-                <img src={assets.gemini_icon} alt="GeminiIcon" />
+              <div className="flex items-start gap-5">
+                <img src={assets.gemini_icon} alt="GeminiIcon" className="w-10 rounded-full" />
                 {loading ? (
-                  <div className="loader">
-                    <hr />
-                    <hr />
-                    <hr />
+                  <div className="w-full flex flex-col gap-2">
+                    <hr className="rounded-md border-none bg-gradient-to-r from-blue-300 to-white h-5 animate-loader" />
+                    <hr className="rounded-md border-none bg-gradient-to-r from-blue-300 to-white h-5 animate-loader" />
+                    <hr className="rounded-md border-none bg-gradient-to-r from-blue-300 to-white h-5 animate-loader" />
                   </div>
                 ) : (
-                  <p dangerouslySetInnerHTML={{ __html: resultData }}></p>
+                  <p className="text-lg font-light leading-[1.8]">{resultData}</p>
                 )}
               </div>
             </div>
           )}
 
-          <div className="main-bottom ">
-            <div className="search-box flex justify-between">
+          <div className="fixd bottom-0 w-full max-w-[900px]  mx-auto">
+            <div className="flex items-center justify-between gap- bg-gray-100 p-4 rounded-full">
               <input
                 onChange={(event) => setInput(event.target.value)}
                 value={input}
                 type="text"
                 placeholder="Enter a prompt here"
-                className="text-black"
+                className="flex-1 bg-transparent border-none outline-none text-lg"
               />
-              <div className="search-box-icon">
-                <img src={assets.gallery_icon} alt="GalleryIcon" />
-                <img src={assets.mic_icon} alt="MicIcon" />
+              <div className="flex items-center gap-4">
                 {input ? (
                   <img
                     onClick={() => onSent()}
                     src={assets.send_icon}
                     alt="SendIcon"
+                    className="w-6 cursor-pointer"
                   />
                 ) : null}
               </div>
             </div>
-            <p className="bottom-info">
-              Gemini may display inaccurate info, including about people, so
-              double-check its responses.{" "}
-              <a href="https://support.google.com/gemini/answer/13594961?visit_id=638488069169109558-2959892032&p=privacy_notice&rd=1#privacy_notice">
+            <p className="text-center text-sm font-light mt-4">
+              Gemini may display inaccurate info, including about people, so double-check its responses.{" "}
+              <a href="https://support.google.com/gemini/answer/13594961?visit_id=638488069169109558-2959892032&p=privacy_notice&rd=1#privacy_notice" className="text-blue-500">
                 Your privacy & Gemini Apps
               </a>
             </p>
